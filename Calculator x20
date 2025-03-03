@@ -1,0 +1,43 @@
+def add_num(a, b):
+  return a + b
+
+def sub_num(a, b):
+  return a - b
+
+def multi_num(a, b):
+  return a * b
+
+def divide_num(a, b):
+  return a / b
+
+while True:
+
+  a = int(input("Enter a: "))
+  b = int(input("Enter b: "))
+
+  print("Operations: ")
+  print("1. add")
+  print("2. sub")
+  print("3. multi")
+  print("4. divide")
+
+
+  operation = input("Enter operation: ")
+
+  if operation == "add":
+    print(add_num(a, b))
+
+  elif operation == "sub":
+    print(sub_num(a, b))
+
+  elif operation == "multi":
+    print(multi_num(a, b))
+
+  elif operation == "divide":
+    print(divide_num(a, b))
+
+  else:
+    print("Innvalid Input")
+
+
+
