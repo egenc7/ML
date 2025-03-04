@@ -1,1 +1,71 @@
+tasks = []
+completed_tasks = []
 
+
+def add_task(task):
+  tasks.append(task)
+  print("Task added successfully")
+
+def mark_completed(task):
+  completed = int(input("Enter the task number you completed: ")) - 1
+  completed_tasks.append(tasks[completed])
+  tasks.remove(tasks[completed])
+  
+
+def view_tasks():
+  if len(tasks) == 0:
+    print('Tasks: \n')
+    print("Completed Tasks: \n")
+    for task in completed_tasks:
+      print(f" +{task}")
+    
+  elif len(tasks) > 0:
+    print('Tasks: \n')
+    for i in tasks:
+      print(f' - {i}')
+    print("Completed Tasks: \n")
+    for task in completed_tasks:
+      print(f" + {task}")
+
+def delete_task(task):
+  tasks.pop(task)
+  print("Task deleted successfully")
+
+
+while True:
+
+
+  print("To-Do List Menu:")
+  print("1. Add task")
+  print("2. View task")
+  print("3. Mark task as completed")
+  print("4. Delete Task")
+  print("5. Exit")
+
+  number = int(input("Enter number: "))
+
+  if number == 1:
+    task = input("Enter task: ")
+    add_task(task)
+
+  elif number == 2:
+    view_tasks()
+
+  elif number == 3:
+    mark_completed(task)
+
+  elif number == 4:
+    task = int(input("Enter the task number you want to delete: ")) -1
+    print("Is it Completed or still in Tasks?")
+    print("1. Completed")
+    print("2. Tasks")
+    choice = int(input("Enter choice:"))
+    if choice == 1:
+      completed_tasks.remove(completed_tasks[task])
+    elif choice == 2:
+      tasks.remove(tasks[task])
+    else:
+      print("Invalid Input")
+
+  elif number == 5:
+    print("Exiting program")
